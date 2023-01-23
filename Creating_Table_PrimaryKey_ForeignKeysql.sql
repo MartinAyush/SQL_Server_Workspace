@@ -22,4 +22,15 @@ ALTER TABLE tbl_Person
 ADD FOREIGN KEY (GenderID) references tbl_Gender(Id);
 
 SELECT * FROM tbl_Gender;
-SELECT * FROM 
+SELECT * FROM tbl_Person;
+
+INSERT INTO tbl_Gender (Id, Gender) 
+VALUES (3, 'Unknown')
+
+INSERT INTO tbl_Person (ID, Name, Email, GenderID)
+VALUES (1, 'Martin', 'm@m.com', 1)
+
+ALTER TABLE tbl_Person
+ADD CONSTRAINT Default_tbl_Person_GenderID
+DEFAULT 3 FOR GenderID
+
